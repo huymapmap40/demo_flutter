@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "667811223987",
+    "firebase_url": "https://motorspecification.firebaseio.com",
+    "project_id": "motorspecification",
+    "storage_bucket": "motorspecification.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:667811223987:android:de42f77dfff5d4244d53c6",
+        "android_client_info": {
+          "package_name": "com.example.demo_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "667811223987-oljdb81ig6f72fjplqgoki0balm83l9k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9Wv9JCd9-7gl-_IHICQaqngWcEz_WYsw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "667811223987-oljdb81ig6f72fjplqgoki0balm83l9k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
