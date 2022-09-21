@@ -5,7 +5,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'components/custom_card.dart';
 import 'routes.dart';
 
-
 void main() {
   runApp(MyApp());
 }
@@ -36,7 +35,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   int _counter = 0;
   List<String> _listInputed = [];
   TextEditingController inputTextController = TextEditingController();
@@ -67,9 +65,11 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _readFirestoreData() async {
-    CollectionReference manufacturer = FirebaseFirestore.instance.collection('manufacturer');
+    CollectionReference manufacturer =
+        FirebaseFirestore.instance.collection('manufacturer');
     DocumentReference acshBrand = manufacturer.doc('ac_schnitzer');
-    var snapshot = await acshBrand.get().then((DocumentSnapshot documentSnapshot) {
+    var snapshot =
+        await acshBrand.get().then((DocumentSnapshot documentSnapshot) {
       if (documentSnapshot.exists) {
         print("Document data:");
         return documentSnapshot.data();
@@ -119,15 +119,19 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
             sizedBoxSpace,
-            OutlineButton(
-              onPressed: () {setState(() {_listInputed = [];});},
+            OutlinedButton(
+              onPressed: () {
+                setState(() {
+                  _listInputed = [];
+                });
+              },
               child: Text('Clear all items'),
             ),
             sizedBoxSpace,
             Expanded(
-                child: ListView.builder(
-                  itemCount: _listInputed.length,
-                  itemBuilder: (BuildContext context, int index) {
+              child: ListView.builder(
+                itemCount: _listInputed.length,
+                itemBuilder: (BuildContext context, int index) {
                   return new Text(_listInputed[index]);
                 },
               ),
@@ -142,17 +146,18 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
       drawer: Drawer(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              const Text('Test drawer abcxyz'),
-              CloseButton(
-                onPressed: _closeDrawer,
-                color: Colors.amber,)
-            ],
-        ),)
-      ),
+          child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            const Text('Test drawer abcxyz'),
+            CloseButton(
+              onPressed: _closeDrawer,
+              color: Colors.amber,
+            )
+          ],
+        ),
+      )),
     );
   }
 }
